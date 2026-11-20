@@ -235,19 +235,34 @@ form.q .btn{margin-top:26px;width:100%}
 .recap{font-size:12.5px;margin-top:14px;color:#6F7763}
 
 /* love */
-.love{position:relative;padding:120px 0;overflow:hidden;color:#fff}
-.love-bg{position:absolute;inset:0;background:url("images/rain-glass.webp") center/cover}
-.love-bg::after{content:"";position:absolute;inset:0;background:rgba(32,39,15,.6)}
-.love-inner{position:relative;display:grid;grid-template-columns:1fr auto;gap:50px;align-items:center}
-.love h2{color:#fff;font-size:clamp(52px,7vw,110px);letter-spacing:-.05em}
-.love p{font-size:19px;margin-top:16px;color:#E9EDE0;max-width:520px}
-.socials{display:flex;gap:12px;margin-top:30px}
-.socials a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
-.socials a:hover{background:var(--star);color:var(--olive-deep);border-color:var(--star)}
-.review-card{background:var(--star);color:var(--olive-deep);border-radius:26px;padding:36px;max-width:370px;transform:rotate(-3deg);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
-.review-card .stars{display:flex;gap:4px;margin-bottom:16px}
-.review-card h3{font-size:32px}
-.review-card p{color:var(--olive-deep);font-size:17px;margin:8px 0 24px}
+.love{position:relative;padding:130px 0;overflow:hidden;color:#fff;background:var(--olive-deep);isolation:isolate}
+.love-bg{position:absolute;inset:0;z-index:-1;background:url("images/rain-glass.webp") center/cover;opacity:.55}
+.love-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(32,39,15,.96) 0%,rgba(32,39,15,.82) 45%,rgba(32,39,15,.55) 100%)}
+.love-inner{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}
+.love h2{color:#fff;font-size:clamp(56px,7.4vw,118px);letter-spacing:-.055em;line-height:.88}
+.love h2 span{display:block;color:var(--star)}
+.love .lede{font-size:19px;margin-top:22px;color:#DCE3CF;max-width:460px}
+.review-card{position:relative;margin-top:38px;background:var(--star);color:var(--olive-deep);border-radius:24px;padding:28px 30px;max-width:460px;display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:center;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.review-card .g{grid-row:span 2;width:72px;height:72px;border-radius:50%;background:var(--olive-deep);display:grid;place-items:center;color:var(--star)}
+.review-card .stars{display:flex;gap:3px}
+.review-card h3{font-size:26px;color:var(--olive-deep);grid-column:2}
+.review-card p{grid-column:1/-1;color:var(--olive-deep);font-size:16.5px;margin-top:12px}
+.review-card .btn{grid-column:1/-1;justify-self:start;margin-top:14px}
+.social-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.social-pills a{display:inline-flex;align-items:center;gap:10px;padding:11px 18px 11px 12px;border-radius:40px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.22);text-decoration:none;color:#fff;font-weight:600;font-size:15px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .2s,color .2s}
+.social-pills a i{width:30px;height:30px;border-radius:50%;background:var(--star);color:var(--olive-deep);display:grid;place-items:center}
+.social-pills a:hover{background:var(--star);color:var(--olive-deep);border-color:var(--star)}
+.social-pills a:hover i{background:var(--olive-deep);color:var(--star)}
+.feed{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feed a{position:relative;display:block;aspect-ratio:1;border-radius:18px;overflow:hidden;background:var(--olive)}
+.feed a:nth-child(3n+2){transform:translateY(42px)}
+.feed img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.feed a::after{content:"";position:absolute;inset:0;background:rgba(235,228,0,0);transition:background .3s}
+.feed a:hover img{transform:scale(1.07)}
+.feed a:hover::after{background:rgba(235,228,0,.18)}
+.feed-tag{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);z-index:2;background:#fff;color:var(--olive-deep);font-weight:600;font-size:15px;padding:12px 20px;border-radius:40px;display:flex;gap:10px;align-items:center;white-space:nowrap;box-shadow:0 18px 40px -16px rgba(0,0,0,.6);text-decoration:none}
+.feed-tag svg{color:var(--olive)}
+.feed-wrap{position:relative;padding-bottom:60px}
 
 /* footer */
 footer{background:var(--olive-deep);color:#C5CDB5;padding:90px 0 0;font-size:15.5px;overflow:hidden}
@@ -295,7 +310,7 @@ footer a:hover{color:var(--star)}
   .promise-copy{padding:80px 24px}
   .offer-grid{grid-template-columns:1fr;gap:20px}
   .diff,.wfp,.quote,.love,.services{padding:90px 0}
-  .review-card{transform:none}
+  .feed{gap:10px}.feed a:nth-child(3n+2){transform:translateY(24px)}
   .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--olive-deep)}
   .mbar a{text-align:center;padding:13px;border-radius:30px;font-weight:600;text-decoration:none}
   .mbar a:first-child{background:var(--star);color:var(--olive-deep)}
@@ -567,19 +582,24 @@ footer a:hover{color:var(--star)}
   <div class="love-bg" aria-hidden="true"></div>
   <div class="wrap love-inner">
     <div>
-      <h2 id="love-title">Customer love!</h2>
-      <p>Follow Brights Window Cleaning on Facebook, Instagram and LinkedIn.</p>
-      <div class="socials">
-        <a href="https://www.facebook.com/brightswindowcleaningedmonton/" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.4V10H7v4h3v8h4v-8h3l.5-4H14V8.7c0-.5.3-.7.8-.7z"/></svg></a>
-        <a href="https://www.instagram.com/brights.window.cleaning/?hl=en" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/brights-window-cleaning/" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21H9z"/></svg></a>
+      <h2 id="love-title">Customer <span>love!</span></h2>
+      <p class="lede">Follow Brights Window Cleaning on Facebook, Instagram and LinkedIn.</p>
+      <div class="social-pills">
+        <a href="https://www.facebook.com/brightswindowcleaningedmonton/"><i><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.4V10H7v4h3v8h4v-8h3l.5-4H14V8.7c0-.5.3-.7.8-.7z"/></svg></i>Facebook</a>
+        <a href="https://www.instagram.com/brights.window.cleaning/?hl=en"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></i>Instagram</a>
+        <a href="https://www.linkedin.com/company/brights-window-cleaning/"><i><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21H9z"/></svg></i>LinkedIn</a>
+      </div>
+      <div class="review-card">
+        <span class="g"><svg width="34" height="34" aria-hidden="true"><use href="#star"/></svg></span>
+        <div class="stars" aria-hidden="true"><svg width="18" height="18"><use href="#star"/></svg><svg width="18" height="18"><use href="#star"/></svg><svg width="18" height="18"><use href="#star"/></svg><svg width="18" height="18"><use href="#star"/></svg><svg width="18" height="18"><use href="#star"/></svg></div>
+        <h3>Are you a happy customer?</h3>
+        <p>Please leave us a review...</p>
+        <a class="btn btn-olive" href="https://g.page/r/CXBhDmgLGugiEBM/review">Submit review</a>
       </div>
     </div>
-    <div class="review-card">
-      <div class="stars" aria-hidden="true"><svg width="22" height="22"><use href="#star"/></svg><svg width="22" height="22"><use href="#star"/></svg><svg width="22" height="22"><use href="#star"/></svg><svg width="22" height="22"><use href="#star"/></svg><svg width="22" height="22"><use href="#star"/></svg></div>
-      <h3>Are you a happy customer?</h3>
-      <p>Please leave us a review...</p>
-      <a class="btn btn-olive" href="https://g.page/r/CXBhDmgLGugiEBM/review">Submit review</a>
+    <div class="feed-wrap">
+      <div class="feed"><a href="https://www.instagram.com/brights.window.cleaning/?hl=en" aria-label="Squeegee over the Edmonton skyline on Instagram"><img src="images/hero-squeegee-edmonton.webp" alt="Squeegee over the Edmonton skyline" loading="lazy"></a><a href="https://www.instagram.com/brights.window.cleaning/?hl=en" aria-label="Cleaning a home window on Instagram"><img src="images/service-residential.webp" alt="Cleaning a home window" loading="lazy"></a><a href="https://www.instagram.com/brights.window.cleaning/?hl=en" aria-label="Cleaning condo building glass on Instagram"><img src="images/service-commercial.webp" alt="Cleaning condo building glass" loading="lazy"></a><a href="https://www.instagram.com/brights.window.cleaning/?hl=en" aria-label="Cleaning rooftop solar panels on Instagram"><img src="images/service-solar.webp" alt="Cleaning rooftop solar panels" loading="lazy"></a><a href="https://www.instagram.com/brights.window.cleaning/?hl=en" aria-label="Cleaning a storefront window on Instagram"><img src="images/service-local-business.webp" alt="Cleaning a storefront window" loading="lazy"></a><a href="https://www.instagram.com/brights.window.cleaning/?hl=en" aria-label="Water-fed pole window cleaning on Instagram"><img src="images/service-water-fed-pole.webp" alt="Water-fed pole window cleaning" loading="lazy"></a></div>
+      <a class="feed-tag" href="https://www.instagram.com/brights.window.cleaning/?hl=en"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@brights.window.cleaning</a>
     </div>
   </div>
 </section>
